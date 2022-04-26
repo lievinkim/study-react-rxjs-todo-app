@@ -17,7 +17,7 @@ const ToDoItem = ({ toDoItem, onDragStart }) => {
   };
 
   const onClickSubmitButton = () => {
-    if (newText === "") return window.alert("내용을 입력해 주세요!");
+    if (newText.trim().length < 1) return window.alert("내용을 입력해 주세요!");
 
     const nextToDoList = toDoList$.value.map((item) => ({
       ...item,
@@ -46,16 +46,22 @@ const ToDoItem = ({ toDoItem, onDragStart }) => {
   return (
     <li
       className="ToDoItem__container"
-      id={toDoItem.idÏ}
+      id={toDoItem.id}
       draggable
       onDragStart={onDragStart}
     >
       {isEdit ? (
         <textarea
+          className="ToDoItem__textarea"
           type="text"
           value={newText}
           ref={editInputRef}
           onChange={onChangeEditInput}
+          draggable
+          onDragStart={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
         />
       ) : (
         <span className="ToDoItem__content">{toDoItem.text}</span>

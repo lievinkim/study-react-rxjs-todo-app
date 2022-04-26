@@ -28,7 +28,6 @@ const InputBox = () => {
 
   const onChangeInput = (e) => {
     setText(e.target.value);
-
   };
 
   const onChangeTag = (e) => {
@@ -36,9 +35,7 @@ const InputBox = () => {
   };
 
   const onClickSaveButton = () => {
-    if (text === "") {
-      return window.alert("내용을 입력해 주세요.");
-    }
+    if (text.trim().length < 1) return window.alert("내용을 입력해 주세요!");
 
     const nextToDoList = toDoList$.value.concat({
       id: toDoList$.value.length,

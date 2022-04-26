@@ -17,8 +17,7 @@ const ToDoItem = ({ toDoItem, onDragStart }) => {
   };
 
   const onClickSubmitButton = () => {
-
-   if (newText === "") return window.alert("내용을 입력해 주세요!")
+    if (newText === "") return window.alert("내용을 입력해 주세요!");
 
     const nextToDoList = toDoList$.value.map((item) => ({
       ...item,

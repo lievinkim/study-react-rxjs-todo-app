@@ -1,0 +1,113 @@
+.App {
+  padding: 20px;
+}
+
+// Home.js
+.Home__container {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.Home__listContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+// InputBox.js
+.InputBox__container {
+  display: flex;
+  flex-direction: column;
+
+  width: 360px;
+  gap: 10px;
+}
+
+.InputBox__input {
+  width: 100%;
+  padding: 0;
+}
+
+.InputBox__buttonArea {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+
+  gap: 10px;
+
+  .InputBox__dropboxButton {
+    width: 85px;
+  }
+
+  .InputBox__saveButton {
+    width: 65px;
+  }
+}
+
+// ToDoItemList.js
+.ToDoItemList__container {
+  flex: 1;
+  min-width: 240px;
+}
+
+.ToDoItemList__title {
+  font-weight: 600;
+  padding: 20px 0px;
+}
+
+.ToDoItemList__items {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+
+  background-color: #f1f3f5;
+
+  overflow: scroll;
+
+  &--todo {
+    border: 1px solid black;
+  }
+}
+
+// ToDoItem.js
+.ToDoItem__container {
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: fit-content;
+  gap: 20px;
+  padding: 20px;
+  margin: 5px 5px 0px 5px;
+
+  background-color: #dbe4ff;
+}
+
+.ToDoItem__content {
+  word-break: break-word;
+
+  width: 100%;
+  height: 100%;
+}
+
+.ToDoItem__buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+
+  .ToDoItem__editButton {
+    width: 65px;
+  }
+
+  .ToDoItem__deleteButton {
+    width: 65px;
+  }
+}
